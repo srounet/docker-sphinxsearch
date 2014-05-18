@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sphinx:docset>
+
+<sphinx:schema>
+<sphinx:field name="content"/>
+</sphinx:schema>
+
+<sphinx:document id="1234">
+<content>this is the main content <![CDATA[[and this <cdata> entry
+must be handled properly by xml parser lib]]></content>
+</sphinx:document>
+</sphinx:docset>
