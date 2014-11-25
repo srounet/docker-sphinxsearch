@@ -52,4 +52,4 @@ RUN echo "sphinx password is sphinx"
 # Create our dummy index
 RUN indexer --all
 
-CMD /usr/sbin/sshd -D
+CMD ["/usr/sbin/sshd", "-D"]
