@@ -41,6 +41,8 @@ ADD dummy.xml /tmp/dummy.xml
 RUN mkdir /var/run/sshd 
 RUN echo 'root:toor' | chpasswd
 
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
 # create users
 # password is sphinx
 RUN useradd -m -d /home/sphinx -p ts2CpSxHw.wxM sphinx
