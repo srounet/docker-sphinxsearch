@@ -11,18 +11,18 @@ RUN apt-get install --yes libexpat1-dev
 RUN apt-get install --yes openssh-server
 RUN apt-get install --yes sudo
 
-RUN cd /tmp && curl -O http://sphinxsearch.com/files/sphinx-2.1.8-release.tar.gz
-RUN cd /tmp && tar zxvf sphinx-2.1.8-release.tar.gz
+RUN cd /tmp && curl -O http://sphinxsearch.com/files/sphinx-2.2.6-release.tar.gz
+RUN cd /tmp && tar zxvf sphinx-2.2.6-release.tar.gz
 
 RUN cd /tmp && curl -O http://snowball.tartarus.org/dist/libstemmer_c.tgz
 RUN cd /tmp && tar zxvf libstemmer_c.tgz
-RUN cp -R /tmp/libstemmer_c/* /tmp/sphinx-2.1.8-release/libstemmer_c/
+RUN cp -R /tmp/libstemmer_c/* /tmp/sphinx-2.2.6-release/libstemmer_c/
 
-RUN cd /tmp/sphinx-2.1.8-release && ./configure --enable-id64 --with-mysql --without-pgsql --with-libstemmer --with-libexpat --with-iconv --with-unixodbc 
-RUN cd /tmp/sphinx-2.1.8-release && make -j4
-RUN cd /tmp/sphinx-2.1.8-release && make install
+RUN cd /tmp/sphinx-2.2.6-release && ./configure --enable-id64 --with-mysql --without-pgsql --with-libstemmer --with-libexpat --with-iconv --with-unixodbc 
+RUN cd /tmp/sphinx-2.2.6-release && make -j4
+RUN cd /tmp/sphinx-2.2.6-release && make install
 
-RUN rm -rf /tmp/sphinx-2.1.8-release/ && rm -rf /tmp/libstemmer_c/
+RUN rm -rf /tmp/sphinx-2.2.6-release/ && rm -rf /tmp/libstemmer_c/
 
 EXPOSE 9306 9312 22
 
